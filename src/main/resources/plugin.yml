@@ -1,0 +1,23 @@
+name: Pythoncombat
+version: '${project.version}'
+main: me.pythontest.pythoncombat.pythoncombat.Pythoncombat
+api-version: 1.18
+authors: [ pythontest ]
+description: Easy pvp manager for your server
+commands:
+  pcinfo:
+    description: command to provide info about plugin author
+    usage: /pcinfo
+    permission: pythoncombat.plugininfo
+    permission-message: Powinnieneś mieć dostęp do tego polecenia jeżeli go nie masz to znaczy że administrator ukrywa pochodzenie tego pluginu. Pythontest pozdrawia.
+  pvp:
+    description: Pozwala zmieniać ustawienia pvp
+    usage: /pvp [allow|deny]
+    permission: pythoncombat.pvp
+permissions:
+  pythoncombat.plugininfo:
+    description: Nie powinneneś zabierać użytkownikom dostępu do tego polecenia
+    default: true
+  pythoncombat.pvp:
+    default: true
+    description: Pozwala zmieniać domyśle ustawienia zezwalania na pvp
