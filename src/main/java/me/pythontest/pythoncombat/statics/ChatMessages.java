@@ -37,7 +37,7 @@ public class ChatMessages {
     }
     public static Component DuelInviteCreated(String username){
         Component message = Component.empty();
-        Component cantDamageText = Component.text("Użytkownik "+username+"zaprosił cię do duel. Jeżeli chcesz z nim walczyć ");
+        Component cantDamageText = Component.text("Użytkownik "+username+" zaprosił cię do duel. Jeżeli chcesz z nim walczyć ");
         cantDamageText = cantDamageText.color(TextColor.fromHexString("#32CD32"));
         Component duelInvite = Component.text("kliknij tutaj");
         duelInvite = duelInvite.style(Style.style(TextDecoration.UNDERLINED));
