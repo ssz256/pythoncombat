@@ -26,11 +26,8 @@ public class EventsListener implements Listener {
     }
     @EventHandler(priority = EventPriority.HIGH)
     public void onEntityDamageByEntity(EntityDamageByEntityEvent e){
-        plugin.getServer().getConsoleSender().sendMessage("triggered");
         if(PvpManager.isDamagingEntity(e.getDamager())){
             Player damager = PvpManager.GetDamager(e.getDamager());
-
-            plugin.getServer().getConsoleSender().sendMessage("Player Instance");
 
             Player damaged = (Player) e.getEntity();
             PCPlayer Pcdamager = plugin.getStorageManager().getPlayer(damager.getUniqueId().toString());

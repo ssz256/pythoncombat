@@ -23,8 +23,10 @@ public class DuelCommand implements CommandExecutor {
             }
             Player mentioned = plugin.getServer().getPlayer(args[1]);
             PCPlayer pcSender = plugin.getStorageManager().getPlayer(((Player) sender).getUniqueId().toString());
-            PCPlayer pcMentioned = plugin.getStorageManager().getPlayer(mentioned.getUniqueId().toString());
-            if(mentioned==null&&!args[1].equals("-a")&&!args[0].equals("remove")){
+            PCPlayer pcMentioned=null;
+            if(mentioned!=null)
+                pcMentioned = plugin.getStorageManager().getPlayer(mentioned.getUniqueId().toString());
+            if(mentioned==null&&!args[1].equals("-a")&&!args[0].equals("remove")&&!args[1].equals(sender.getName())){
                 sender.sendMessage(ChatMessages.UnknownUser(args[1]));
                 return true;
             }
@@ -62,7 +64,7 @@ public class DuelCommand implements CommandExecutor {
                 else
                     sender.sendMessage(ChatMessages.DuelInviteNotExist(mentioned.getName()));
             }
-            if(args[0].equals("delete")){
+            if(args[0].equals("remove")){
                 if(args[1].equals("-a")){
                     pcSender.removeAllDuels();
                     return true;

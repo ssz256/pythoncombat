@@ -16,7 +16,7 @@ public class PvpManager {
             return true;
         Long Timeout = damager.getTimeout(damaged.getId());
         Date now = new Date();
-        if(damager.getTimeout(damaged.getId()) instanceof Long && Timeout<=now.getTime())
+        if(damager.getTimeout(damaged.getId()) instanceof Long && Timeout>now.getTime())
             return true;
         if(damager.getPvpStatus()&&damaged.getPvpStatus())
             return true;

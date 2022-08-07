@@ -28,7 +28,7 @@ public class PCPlayer {
     }
     public boolean isInDuel(String id){
         for (String duel : duels) {
-            if(duel.equals("id"))
+            if(duel.equals(id))
                 return true;
         }
         return false;
